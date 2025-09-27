@@ -35,10 +35,20 @@ public class LoginActivity extends AppCompatActivity {
             String user = etUsername.getText().toString().trim();
             String pass = etPassword.getText().toString().trim();
 
-            if(user.isEmpty() || pass.isEmpty()){
-                etUsername.setError("Nhập tên đăng nhập");
-                etPassword.setError("Nhập mật khẩu");
-            } else {
+            boolean isValid = true; // Cờ báo hiệu có lỗi hay không
+
+            if(user.isEmpty()){
+                etUsername.setError("Vui lòng nhập tên đăng nhập");
+                isValid = false;
+            }
+            if(pass.isEmpty()){
+                etPassword.setError("Vui lòng nhập mật khẩu");
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Thêm một dòng comment để đánh dấu sự thay đổi này
+                // Bắt đầu tích hợp API đăng nhập tại đây
                 // Xử lý đăng nhập thật sự ở đây
             }
         });
